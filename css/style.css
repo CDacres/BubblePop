@@ -15,8 +15,10 @@ body{
 
 #menu {
 /*	display:none;*/
+background-color: navy;
 }
 
 #game {
 	display:none;
+	background-color: blue;
 }
