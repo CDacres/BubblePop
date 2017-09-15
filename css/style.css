@@ -1,0 +1,22 @@
+body{
+	font-family: 
+}
+
+#frame {
+	margin: 0 auto;
+	height: 600px;
+	width: 900px;
+}
+
+.screen {
+	height: 600px;
+	width: 900px;
+}
+
+#menu {
+/*	display:none;*/
+}
+
+#game {
+	display:none;
+}
