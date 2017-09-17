@@ -13,8 +13,14 @@ $(function () {
 
 	$bubble.click(function (event) {
 		// playPop();
-		$(this).remove();
-		speedModifier += 0.1;
+		var $this = $(this);
+		if (parseInt($this.attr('value')) === turn) {
+			$this.remove();
+			speedModifier += 0.05;
+			turn ++;
+		} else {
+			console.log('Wrong Bubble');
+		}
 	});
     
     $('.bubble').each(function() {
