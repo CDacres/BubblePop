@@ -80,8 +80,13 @@ $(function () {
 		    self.totalSeconds += 1;
 		    $("#min").html(pad(Math.floor(self.totalSeconds / 60 % 60)));
 		    $("#sec").html(pad(parseInt(self.totalSeconds % 60)));
-	    }, 1000);
-	  }
+	    	}, 1000);
+	  	},
+
+	    pause: function () {
+    		clearInterval(this.interval);
+    		delete this.interval;
+  		}
 	};
 
 
