@@ -1,5 +1,5 @@
 body{
-	font-family: 
+	font-family: 'Chewy', cursive;
 }
 
 #frame {
@@ -11,23 +11,32 @@ body{
 .screen {
 	height: 600px;
 	width: 900px;
+	background-image: url("../images/bubble-background.jpg");
+	background-size: 600px 900px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 #menu {
-	display:none;
-background-color: navy;
+/*	display:none;*/
+	background-color: navy;
 }
 
-#game {
-/*	display:none;*/
-/*	background-color: blue;*/
+#container {
+	position: relative;
+	background-image: url("../images/bubble-background.jpg");
+	background-size: 600px 900px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display:none;
 }
 
 .bubble {
 	border-radius: 100%;
 	position: fixed;
-	height: 100px;
-	width: 100px;
+	height: 80px;
+	width: 80px;
 	background-image: url("../images/bubble.png");
-	background-color: blue;
+	background-size: 80px 80px;
+	background-color: #e3f0fc;
 }

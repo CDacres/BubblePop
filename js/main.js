@@ -3,13 +3,13 @@ $(function () {
 	var $bubble = $('.bubble');
 
 	$('#start').click(function (event) {
-		console.log('I have been clicked');
+		// playStart();
 		$('#menu').hide();
-		$('#game').show();
+		$('#container').show();
 	});
 
 	$bubble.click(function (event) {
-		playPop();
+		// playPop();
 		$(this).remove();
 	});
     
@@ -21,8 +21,8 @@ $(function () {
 
 	    $container = ($container || $(window))
 	    
-	    var h = $container.height() - 100;
-	    var w = $container.width() - 100;
+	    var h = $container.height() - 80;
+	    var w = $container.width() - 80;
 
 	    var nh = Math.floor(Math.random() * h);
 	    var nw = Math.floor(Math.random() * w);
@@ -33,12 +33,11 @@ $(function () {
 	function animateDiv(targetid) {
 	    
 	    var $target = $('#' + targetid);
-	    var msRandom = (Math.floor(Math.random() * 3) + 1) * 1000;
 	    var newq = makeNewPosition($target.parent());
 	    var oldq = $target.offset();
 	    var speed = calcSpeed([oldq.top, oldq.left], newq);
 
-	    $('#' + targetid).delay(msRandom).animate({
+	    $('#' + targetid).animate({
 	        top: newq[0],
 	        left: newq[1]
 	    }, speed, function() {
@@ -52,16 +51,21 @@ $(function () {
 	    var y = Math.abs(prev[0] - next[0]);
 
 	    var greatest = x > y ? x : y;
-	    var speedModifier = 2;
+	    var speedModifier = 0.1;
 	    var speed = Math.ceil(greatest / speedModifier);
 
 	    return speed;
 	}
 
 	function playPop() {
-          var $pop = $("#pop");
-          pop.play();
+		var $pop = $('#pop');
+        $pop.play();
     }
+
+  //   function playStart() {
+		// var $start = $('#start');
+		// $start.play();
+  //   }
 
 
 });
