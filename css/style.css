@@ -4,12 +4,12 @@ body{
 
 #frame {
 	margin: 0 auto;
-	height: 600px;
+	height: 700px;
 	width: 900px;
 }
 
-.screen {
-	height: 600px;
+#menu {
+	height: 700px;
 	width: 900px;
 	background-image: url("../images/bubble-background.jpg");
 	background-size: 600px 900px;
@@ -17,18 +17,26 @@ body{
 	background-repeat: no-repeat;
 }
 
-#menu {
-/*	display:none;*/
-	background-color: navy;
+#maingame {
+	height: 700px;
+	width: 900px;
+	display:none;
+}
+
+#toolbar {
+	height: 100px;
+	width: 900px;
+	background-color: blue;
 }
 
 #container {
 	position: relative;
+	height: 600px;
+	width: 900px;
 	background-image: url("../images/bubble-background.jpg");
 	background-size: 600px 900px;
 	background-size: cover;
 	background-repeat: no-repeat;
-	display:none;
 }
 
 .bubble {

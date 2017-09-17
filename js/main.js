@@ -5,7 +5,8 @@ $(function () {
 	$('#start').click(function (event) {
 		// playStart();
 		$('#menu').hide();
-		$('#container').show();
+		$('#maingame').show();
+		Clock.start();
 	});
 
 	$bubble.click(function (event) {
@@ -66,6 +67,20 @@ $(function () {
 		// var $start = $('#start');
 		// $start.play();
   //   }
+
+	var Clock = {
+	totalSeconds: 0,
+
+		start: function () {
+			var self = this;
+			function pad(val) { return val > 9 ? val : "0" + val; }
+		    this.interval = setInterval(function () {
+		    self.totalSeconds += 1;
+		    $("#min").html(pad(Math.floor(self.totalSeconds / 60 % 60)));
+		    $("#sec").html(pad(parseInt(self.totalSeconds % 60)));
+	    }, 1000);
+	  }
+	};
 
 
 });
