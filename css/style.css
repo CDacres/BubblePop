@@ -14,11 +14,20 @@ body{
 }
 
 #menu {
-/*	display:none;*/
+	display:none;
 background-color: navy;
 }
 
 #game {
-	display:none;
+/*	display:none;*/
+/*	background-color: blue;*/
+}
+
+.bubble {
+	border-radius: 100%;
+	position: fixed;
+	height: 100px;
+	width: 100px;
+	background-image: url("../images/bubble.png");
 	background-color: blue;
 }
