@@ -9,12 +9,9 @@ $(function () {
 	});
 
 	$bubble.click(function (event) {
+		playPop();
 		$(this).remove();
 	});
-
-    // $('.bubble').each(function() {
-    //     animateDiv(this.id);
-    // });
     
     $('.bubble').each(function() {
         animateDiv(this.id);
@@ -60,6 +57,11 @@ $(function () {
 
 	    return speed;
 	}
+
+	function playPop() {
+          var $pop = $("#pop");
+          pop.play();
+    }
 
 
 });
