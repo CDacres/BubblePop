@@ -1,6 +1,8 @@
 $(function () {
 
 	var $bubble = $('.bubble');
+	var speedModifier = 0.1;
+	var turn = 1;					//Taken from inside calcspeed
 
 	$('#start').click(function (event) {
 		// playStart();
@@ -12,6 +14,7 @@ $(function () {
 	$bubble.click(function (event) {
 		// playPop();
 		$(this).remove();
+		speedModifier += 0.1;
 	});
     
     $('.bubble').each(function() {
@@ -52,7 +55,6 @@ $(function () {
 	    var y = Math.abs(prev[0] - next[0]);
 
 	    var greatest = x > y ? x : y;
-	    var speedModifier = 0.1;
 	    var speed = Math.ceil(greatest / speedModifier);
 
 	    return speed;
