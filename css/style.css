@@ -20,15 +20,16 @@ body{
 	height: 700px;
 	width: 900px;
 	display:none;
+	background-image: url("../images/bubble-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
 #toolbar {
 	height: 100px;
 	width: 900px;
 	position: relative;
-	background-image: url("../images/bubble-toolbar.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	text-align: center;
 	color: #e3f0fc;
 }
@@ -99,9 +100,6 @@ body{
 	position: relative;
 	height: 600px;
 	width: 900px;
-	background-image: url("../images/bubble-background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 .bubble {
@@ -118,7 +116,7 @@ body{
 #win {
 	height: 700px;
 	width: 900px;
-	background-image: url("../images/bubble-background.jpg");
+	background-image: url("../images/bubble-win.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	display:none;
@@ -127,7 +125,7 @@ body{
 #lose {
 	height: 700px;
 	width: 900px;
-	background-image: url("../images/bubble-background.jpg");
+	background-image: url("../images/bubble-lose.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	display:none;

@@ -29,7 +29,7 @@ $(function () {
 	$('#lives').html(lives);
 
 	$('#start').click(function (event) {
-		playSound('sounds/bubbles-start.mp3')
+		playSound('sounds/bubbles-start.mp3');
 		$('#menu').hide();
 		$('#maingame').show();
 		Clock.start();
@@ -38,19 +38,18 @@ $(function () {
 	$bubble.click(function (event) {
 		var $this = $(this);
 		if (parseInt($this.attr('value')) === turn) {
-			playSound('sounds/pop-sound.mp3')
+			playSound('sounds/pop-sound.mp3');
 			$this.stop();
 			$this.remove();
 			speedModifier += 0.05;
 			turn ++;
 			if (checkWin()) {
-				console.log('Win!');
 				displayWin();
 			} else {
 				$('#question').html(qa[turn-1][0]);
 			}
 		} else {
-			playSound('sounds/error.mp3')
+			playSound('sounds/error.mp3');
 			$this.css('background-color', '#ff5900');
 			setTimeout(function () {
                 $this.css('background-color', '#e3f0fc');
@@ -147,6 +146,7 @@ $(function () {
 
 	function displayWin () {
 		Clock.stop();
+		playSound('sounds/success.mp3');
 		$('#maingame').hide();
 		$('#win').show();
 	}
