@@ -12,7 +12,6 @@ body{
 	height: 700px;
 	width: 900px;
 	background-image: url("../images/bubble-background.jpg");
-	background-size: 600px 900px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -30,6 +29,7 @@ body{
 	background-image: url("../images/bubble-toolbar.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	text-align: center;
 }
 
 #timedisplay {
@@ -38,10 +38,17 @@ body{
 	width: 100px;
 }
 
+#timedisplay h2 {
+	margin: 5px;
+}
+
 #questiondisplay {
 	position: absolute;
 	left: 400px;
-	text-align: center;
+}
+
+#questiondisplay h2 {
+	margin: 5px;
 }
 
 #livesdisplay {
@@ -49,12 +56,25 @@ body{
 	right:50px;
 }
 
+#livesdisplay h2 {
+	margin: 5px;
+}
+
+.lives {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-image: url("../images/bubble-lives.png");
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
 #container {
 	position: relative;
 	height: 600px;
 	width: 900px;
 	background-image: url("../images/bubble-background.jpg");
-	background-size: 600px 900px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -67,4 +87,5 @@ body{
 	background-image: url("../images/bubble.png");
 	background-size: 80px 80px;
 	background-color: #e3f0fc;
+	z-index: 1;
 }
