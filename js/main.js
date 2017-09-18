@@ -23,7 +23,7 @@ $(function () {
 	var speedModifier = 0.1;		//Taken from inside calcspeed
 	var turn = 1;
 	var lives = 3;
-	var qa = shuffledQuestions.slice(0,10);
+	var qa = shuffledQuestions.slice(0,5);
 	answerSetup();
 	$('#question').html(qa[0][0]);
 	$('#lives').html(lives);
@@ -43,10 +43,14 @@ $(function () {
 			$this.remove();
 			speedModifier += 0.05;
 			turn ++;
-			checkWin ();
-			$('#question').html(qa[turn-1][0]);
+			if (checkWin()) {
+				console.log('Win!');
+				displayWin();
+			} else {
+				$('#question').html(qa[turn-1][0]);
+			}
 		} else {
-			console.log('Wrong Bubble');
+			playSound('sounds/error.mp3')
 			lives --;
 			checkLives();
 			checkLose();
@@ -133,15 +137,21 @@ $(function () {
 
 	function checkWin () {
 		if (turn > qa.length) {
-			Clock.stop();
-			alert('You Win!');
+			return true;
 		}
+	}
+
+	function displayWin () {
+		Clock.stop();
+		$('#maingame').hide();
+		$('#win').show();
 	}
 
 	function checkLose () {
 		if (lives === 0) {
 			Clock.stop();
-			alert('You Lose!');
+			$('#maingame').hide();
+			$('#lose').show();
 		}
 	}
 
