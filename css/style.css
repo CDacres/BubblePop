@@ -57,6 +57,8 @@ body{
 }
 
 #livesdisplay h2 {
+	position: absolute;
+	right:50px;
 	margin: 5px;
 }
 
@@ -68,6 +70,24 @@ body{
 	background-size: 40px 40px;
 	background-repeat: no-repeat;
 	z-index: 1;
+}
+
+#life1 {
+	position: absolute;
+	top: 39px;
+	right:108px;
+}
+
+#life2 {
+	position: absolute;
+	top: 39px;
+	right: 58px;
+}
+
+#life3 {
+	position: absolute;
+	top: 39px;
+	right: 8px;
 }
 
 #container {

@@ -35,7 +35,7 @@ $(function () {
 		} else {
 			console.log('Wrong Bubble');
 			lives --;
-			$('#lives').html(lives);
+			checkLives();
 			checkLose();
 		}
 	});
@@ -126,6 +126,22 @@ $(function () {
 		var sound = document.createElement('audio');
 		sound.setAttribute('src', path);
 		sound.play();
+	}
+
+	function checkLives () {
+		switch(lives) {
+			case 3:
+				$('#life1, #life2, #life3').show();
+				break;
+			case 2:
+				$('#life3').hide();
+				break;
+			case 1:
+				$('#life2').hide();
+				break;
+			case 0:
+				$('#life1').hide();
+		}
 	}
 
 });
