@@ -41,7 +41,7 @@ body{
 
 .bubble {
 	border-radius: 100%;
-	position: fixed;
+	position: absolute;
 	height: 80px;
 	width: 80px;
 	background-image: url("../images/bubble.png");
