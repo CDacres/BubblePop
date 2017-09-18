@@ -15,7 +15,7 @@ $(function () {
 		['How many houses are there at Hogwarts?','4'],
 		['How many millilitres in a pint?','568'],
 		['How many Dalmations were in Disney\'s famous film?','101'],
-		['What is the value of imaginary number i, squared?','-1'],
+		['What is the value of the imaginary number i, squared?','-1'],
 		['What is absoulte zero in celcius?','-273']
 	];
 	var shuffledQuestions = shuffleArray(allquestions);
