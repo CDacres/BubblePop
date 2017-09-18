@@ -51,6 +51,10 @@ $(function () {
 			}
 		} else {
 			playSound('sounds/error.mp3')
+			$this.css('background-color', '#ff5900');
+			setTimeout(function () {
+                $this.css('background-color', '#e3f0fc');
+            }, 200);
 			lives --;
 			checkLives();
 			checkLose();
