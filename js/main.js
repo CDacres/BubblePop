@@ -3,6 +3,15 @@ $(function () {
 	var $bubble = $('.bubble');
 	var speedModifier = 0.1;
 	var turn = 1;					//Taken from inside calcspeed
+	var qa = [
+		['Question 1','Answer 1'],
+		['Question 2','Answer 2'],
+		['Question 3','Answer 3'],
+		['Question 4','Answer 4'],
+		['Question 5','Answer 5']
+	];
+	questionSetup();
+	$('#questiondisplay').html(qa[0][0]);
 
 	$('#start').click(function (event) {
 		// playStart();
@@ -18,6 +27,7 @@ $(function () {
 			$this.remove();
 			speedModifier += 0.05;
 			turn ++;
+			$('#questiondisplay').html(qa[turn-1][0]);
 		} else {
 			console.log('Wrong Bubble');
 		}
@@ -95,5 +105,10 @@ $(function () {
   		}
 	};
 
+	function questionSetup () {
+		for (var i = 1; i <= qa.length; i++) {
+			$('#bubble' + i).html(qa[i-1][1]);
+		}
+	}
 
 });
