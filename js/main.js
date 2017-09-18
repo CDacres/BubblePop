@@ -1,8 +1,9 @@
 $(function () {
 
 	var $bubble = $('.bubble');
-	var speedModifier = 0.1;
-	var turn = 1;					//Taken from inside calcspeed
+	var speedModifier = 0.1;		//Taken from inside calcspeed
+	var turn = 1;
+	var lives = 3;
 	var qa = [
 		['Question 1','Answer 1'],
 		['Question 2','Answer 2'],
@@ -27,9 +28,12 @@ $(function () {
 			$this.remove();
 			speedModifier += 0.05;
 			turn ++;
+			checkWin ();
 			$('#questiondisplay').html(qa[turn-1][0]);
 		} else {
 			console.log('Wrong Bubble');
+			lives --;
+
 		}
 	});
     
@@ -108,6 +112,12 @@ $(function () {
 	function questionSetup () {
 		for (var i = 1; i <= qa.length; i++) {
 			$('#bubble' + i).html(qa[i-1][1]);
+		}
+	}
+
+	function checkWin () {
+		if (turn > qa.length) {
+			alert('You Win!');
 		}
 	}
 
