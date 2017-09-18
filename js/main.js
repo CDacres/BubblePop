@@ -12,7 +12,7 @@ $(function () {
 		['Question 5','Answer 5']
 	];
 	answerSetup();
-	$('#questiondisplay').html(qa[0][0]);
+	$('#question').html(qa[0][0]);
 	$('#lives').html(lives);
 
 	$('#start').click(function (event) {
@@ -31,7 +31,7 @@ $(function () {
 			speedModifier += 0.05;
 			turn ++;
 			checkWin ();
-			$('#questiondisplay').html(qa[turn-1][0]);
+			$('#question').html(qa[turn-1][0]);
 		} else {
 			console.log('Wrong Bubble');
 			lives --;

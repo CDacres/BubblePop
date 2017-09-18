@@ -26,7 +26,27 @@ body{
 #toolbar {
 	height: 100px;
 	width: 900px;
-	background-color: blue;
+	position: relative;
+	background-image: url("../images/bubble-toolbar.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#timedisplay {
+	position: absolute;
+	left: 50px;
+	width: 100px;
+}
+
+#questiondisplay {
+	position: absolute;
+	left: 400px;
+	text-align: center;
+}
+
+#livesdisplay {
+	position: absolute;
+	right:50px;
 }
 
 #container {
