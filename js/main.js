@@ -23,9 +23,10 @@ $(function () {
 	});
 
 	$bubble.click(function (event) {
-		playSound('sounds/pop-sound.mp3')
 		var $this = $(this);
 		if (parseInt($this.attr('value')) === turn) {
+			playSound('sounds/pop-sound.mp3')
+			$this.stop();
 			$this.remove();
 			speedModifier += 0.05;
 			turn ++;
@@ -40,7 +41,7 @@ $(function () {
 	});
     
     $('.bubble').each(function() {
-        animateDiv(this.id);
+        animateDiv($(this));
     });
 
 	function makeNewPosition($container) {
@@ -56,19 +57,19 @@ $(function () {
 	    return [nh, nw];
 	}
 
-	function animateDiv(targetid) {
+	function animateDiv($target) {
 	    
-	    var $target = $('#' + targetid);
 	    var newq = makeNewPosition($target.parent());
 	    var oldq = $target.offset();
 	    var speed = calcSpeed([oldq.top, oldq.left], newq);
 
-	    $('#' + targetid).animate({
+	    $target.animate({
 	        top: newq[0],
 	        left: newq[1]
 	    }, speed, function() {
-	        animateDiv(targetid);
+	        animateDiv($target);
 	    });
+
 	}
 
 	function calcSpeed(prev, next) {
