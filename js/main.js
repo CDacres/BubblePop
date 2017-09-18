@@ -103,7 +103,7 @@ $(function () {
 	    	}, 1000);
 	  	},
 
-	    pause: function () {
+	    stop: function () {
     		clearInterval(this.interval);
     		delete this.interval;
   		}
@@ -117,6 +117,7 @@ $(function () {
 
 	function checkWin () {
 		if (turn > qa.length) {
+			Clock.stop();
 			alert('You Win!');
 		}
 	}
