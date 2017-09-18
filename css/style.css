@@ -49,7 +49,7 @@ body{
 
 #questiondisplay {
 	position: absolute;
-	left: 400px;
+	left: 300px;
 }
 
 #questiondisplay h2 {
@@ -121,6 +121,7 @@ body{
 	background-image: url("../images/bubble-background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	display:none;
 }
 
 #lose {
@@ -129,4 +130,5 @@ body{
 	background-image: url("../images/bubble-background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	display:none;
 }

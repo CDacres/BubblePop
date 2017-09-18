@@ -13,19 +13,17 @@ $(function () {
 		['How many Pokemon are there in generation 1?','151'],
 		['Which year did Busted travel to?','3000'],
 		['How many houses are there at Hogwarts?','4'],
+		['How many millilitres in a pint?','568'],
+		['How many Dalmations were in Disney\'s famous film?','101'],
+		['What is the value of imaginary number i, squared?','-1'],
+		['What is absoulte zero in celcius?','-273']
 	];
-
+	var shuffledQuestions = shuffleArray(allquestions);
 	var $bubble = $('.bubble');
 	var speedModifier = 0.1;		//Taken from inside calcspeed
 	var turn = 1;
 	var lives = 3;
-	var qa = [
-		['Question 1','Answer 1'],
-		['Question 2','Answer 2'],
-		['Question 3','Answer 3'],
-		['Question 4','Answer 4'],
-		['Question 5','Answer 5']
-	];
+	var qa = shuffledQuestions.slice(0,10);
 	answerSetup();
 	$('#question').html(qa[0][0]);
 	$('#lives').html(lives);
@@ -59,6 +57,16 @@ $(function () {
         animateDiv($(this));
     });
 
+    function shuffleArray(array) {
+	    for (var i = array.length - 1; i > 0; i--) {
+	        var j = Math.floor(Math.random() * (i + 1));
+	        var temp = array[i];
+	        array[i] = array[j];
+	        array[j] = temp;
+	    }
+    	return array;
+	}
+	
 	function makeNewPosition($container) {
 
 	    $container = ($container || $(window))
