@@ -33,7 +33,8 @@ $(function () {
 		} else {
 			console.log('Wrong Bubble');
 			lives --;
-
+			$('#lives').html(lives);
+			checkLose();
 		}
 	});
     
@@ -119,6 +120,13 @@ $(function () {
 		if (turn > qa.length) {
 			Clock.stop();
 			alert('You Win!');
+		}
+	}
+
+	function checkLose () {
+		if (lives === 0) {
+			Clock.stop();
+			alert('You Lose!');
 		}
 	}
 
