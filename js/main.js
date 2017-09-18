@@ -11,18 +11,19 @@ $(function () {
 		['Question 4','Answer 4'],
 		['Question 5','Answer 5']
 	];
-	questionSetup();
+	answerSetup();
 	$('#questiondisplay').html(qa[0][0]);
+	$('#lives').html(lives);
 
 	$('#start').click(function (event) {
-		// playStart();
+		playSound('sounds/bubbles-start.mp3')
 		$('#menu').hide();
 		$('#maingame').show();
 		Clock.start();
 	});
 
 	$bubble.click(function (event) {
-		// playPop();
+		playSound('sounds/pop-sound.mp3')
 		var $this = $(this);
 		if (parseInt($this.attr('value')) === turn) {
 			$this.remove();
@@ -81,16 +82,6 @@ $(function () {
 	    return speed;
 	}
 
-	function playPop() {
-		var $pop = $('#pop');
-        $pop.play();
-    }
-
-  //   function playStart() {
-		// var $start = $('#start');
-		// $start.play();
-  //   }
-
 	var Clock = {
 	totalSeconds: 0,
 
@@ -110,7 +101,7 @@ $(function () {
   		}
 	};
 
-	function questionSetup () {
+	function answerSetup () {
 		for (var i = 1; i <= qa.length; i++) {
 			$('#bubble' + i).html(qa[i-1][1]);
 		}
@@ -128,6 +119,12 @@ $(function () {
 			Clock.stop();
 			alert('You Lose!');
 		}
+	}
+
+	function playSound(path) {
+		var sound = document.createElement('audio');
+		sound.setAttribute('src', path);
+		sound.play();
 	}
 
 });
