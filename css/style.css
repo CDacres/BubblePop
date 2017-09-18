@@ -30,6 +30,7 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
+	color: #e3f0fc;
 }
 
 #timedisplay {
@@ -40,6 +41,10 @@ body{
 
 #timedisplay h2 {
 	margin: 5px;
+}
+
+#time {
+	font-size: 35px;
 }
 
 #questiondisplay {
@@ -108,4 +113,20 @@ body{
 	background-size: 80px 80px;
 	background-color: #e3f0fc;
 	z-index: 1;
+}
+
+#win {
+	height: 700px;
+	width: 900px;
+	background-image: url("../images/bubble-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#lose {
+	height: 700px;
+	width: 900px;
+	background-image: url("../images/bubble-background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }

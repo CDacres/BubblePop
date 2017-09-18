@@ -1,5 +1,20 @@
 $(function () {
 
+	var allquestions = [
+		['How many in a baker\'s dozen?','13'],
+		['What is the legal drinking age in the UK','18'],
+		['How many years in a quarter of a century?','25'],
+		['How many violins in a string quartet?','2'],
+		['How many stairs are there in a bungalow?','0'],
+		['What is the highest possible score in Blackjack?','21'],
+		['How many leeters are there in the alphabet?','26'],
+		['How many counties are there in England?','48'],
+		['What is the character limit on twitter?','140'],
+		['How many Pokemon are there in generation 1?','151'],
+		['Which year did Busted travel to?','3000'],
+		['How many houses are there at Hogwarts?','4'],
+	];
+
 	var $bubble = $('.bubble');
 	var speedModifier = 0.1;		//Taken from inside calcspeed
 	var turn = 1;
