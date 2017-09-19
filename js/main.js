@@ -47,8 +47,10 @@ $(function () {
 	var speedModifier = 0.1;		//Taken from inside calcspeed
 	var turn = 1;
 	var lives = 3;
-	var qa = shuffledQuestions.slice(0,5);
+	var qa = shuffledQuestions.slice(0,10);
+	var extraQ = shuffledQuestions.slice(10,15);
 	answerSetup();
+	extraAnswerSetup();
 	$('#question').html(qa[0][0]);
 	$('#lives').html(lives);
 
@@ -61,11 +63,13 @@ $(function () {
 
 	$bubble.click(function (event) {
 		var $this = $(this);
+		console.log($this.attr('value'));
+		console.log(turn);
 		if (parseInt($this.attr('value')) === turn) {
 			playSound('sounds/pop-sound.mp3');
 			$this.stop();
 			$this.remove();
-			speedModifier += 0.05;
+			// speedModifier += 0.05;
 			turn ++;
 			if (checkWin()) {
 				displayWin();
@@ -81,9 +85,10 @@ $(function () {
 			lives --;
 			checkLives();
 			checkLose();
+			addBubbles();
 		}
 	});
-    
+
     $('.bubble').each(function() {
         animateDiv($(this));
     });
@@ -150,6 +155,12 @@ $(function () {
 		}
 	}
 
+	function extraAnswerSetup () {
+		for (var i = 1; i <= extraQ.length; i++) {
+			$('#bubble' + (10+i)).html(extraQ[i-1][1]);
+		}
+	}
+
 	function checkWin () {
 		if (turn > qa.length) {
 			return true;
@@ -198,6 +209,20 @@ $(function () {
 	function getFinalTime(winLose) {
 		$('#' + winLose + 'min').html($('#min').html());
 		$('#' + winLose + 'sec').html($('#sec').html());
+	}
+
+	function addBubbles() {
+		switch(lives) {
+			case 2:
+				$('#bubble11').show();
+				$('#bubble12').show();
+				qa = qa.concat(extraQ.slice(0,2));
+				break;
+			case 1:
+				$('#bubble13').show();
+				$('#bubble14').show();
+				qa = qa.concat(extraQ.slice(2,4));
+		}
 	}
 
 });

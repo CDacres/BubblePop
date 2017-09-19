@@ -161,6 +161,22 @@ body{
     line-height: 80px;
 }
 
+#bubble11 {
+	display: none;
+}
+
+#bubble12 {
+	display: none;
+}
+
+#bubble13 {
+	display: none;
+}
+
+#bubble14 {
+	display: none;
+}
+
 #win {
 	height: 700px;
 	width: 900px;
@@ -170,7 +186,7 @@ body{
 	position: relative;
 	color: #9cabff;
     text-shadow: 2px 2px 4px #000000;
-	display:none;
+	display: none;
 }
 
 #win h1 {
