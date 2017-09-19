@@ -21,7 +21,7 @@ $(function () {
 		['What\'s the loneliest number?','1'],
 		['How many arms and tentacles does a squid have?','10'],
 		['How many players are there in a standard football team?','11'],
-		['How many years is a diamond anniversary'],
+		['How many years is a diamond anniversary','60'],
 		['How many colours are there in the rainbow?','7'],
 		['How many cards are there in a standard deck?','52'],
 		['When was the battle of Hastings?','1066'],
@@ -99,57 +99,45 @@ $(function () {
 	}
 	
 	function makeNewPosition($container) {
-
 	    $container = ($container || $(window))
-	    
 	    var h = $container.height() - 80;
 	    var w = $container.width() - 80;
-
 	    var nh = Math.floor(Math.random() * h);
 	    var nw = Math.floor(Math.random() * w);
-
 	    return [nh, nw];
 	}
 
 	function animateDiv($target) {
-	    
 	    var newq = makeNewPosition($target.parent());
 	    var oldq = $target.offset();
 	    var speed = calcSpeed([oldq.top, oldq.left], newq);
-
 	    $target.animate({
 	        top: newq[0],
 	        left: newq[1]
 	    }, speed, function() {
 	        animateDiv($target);
 	    });
-
 	}
 
 	function calcSpeed(prev, next) {
-
 	    var x = Math.abs(prev[1] - next[1]);
 	    var y = Math.abs(prev[0] - next[0]);
-
 	    var greatest = x > y ? x : y;
 	    var speed = Math.ceil(greatest / speedModifier);
-
 	    return speed;
 	}
 
 	var Clock = {
 	totalSeconds: 0,
-
 		start: function () {
 			var self = this;
 			function pad(val) { return val > 9 ? val : "0" + val; }
 		    this.interval = setInterval(function () {
 		    self.totalSeconds += 1;
-		    $("#min").html(pad(Math.floor(self.totalSeconds / 60 % 60)));
-		    $("#sec").html(pad(parseInt(self.totalSeconds % 60)));
+		    $('#min').html(pad(Math.floor(self.totalSeconds / 60 % 60)));
+		    $('#sec').html(pad(parseInt(self.totalSeconds % 60)));
 	    	}, 1000);
 	  	},
-
 	    stop: function () {
     		clearInterval(this.interval);
     		delete this.interval;
@@ -170,6 +158,7 @@ $(function () {
 
 	function displayWin () {
 		Clock.stop();
+		getFinalTime('win');
 		playSound('sounds/success.mp3');
 		$('#maingame').hide();
 		$('#win').show();
@@ -178,6 +167,7 @@ $(function () {
 	function checkLose () {
 		if (lives === 0) {
 			Clock.stop();
+			getFinalTime('lose');
 			$('#maingame').hide();
 			$('#lose').show();
 		}
@@ -203,6 +193,11 @@ $(function () {
 			case 0:
 				$('#life1').hide();
 		}
+	}
+
+	function getFinalTime(winLose) {
+		$('#' + winLose + 'min').html($('#min').html());
+		$('#' + winLose + 'sec').html($('#sec').html());
 	}
 
 });
