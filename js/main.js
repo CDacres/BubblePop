@@ -43,7 +43,6 @@ $(function () {
 		['How many wives did Henry VII have?','6']
 	];
 	var shuffledQuestions = shuffleArray(allquestions);
-	var $bubble = $('.bubble');
 	var speedModifier = 0.1;		//Taken from inside calcspeed
 	var turn = 1;
 	var lives = 3;
@@ -61,10 +60,9 @@ $(function () {
 		Clock.start();
 	});
 
+	var $bubble = $('.bubble');
 	$bubble.click(function (event) {
 		var $this = $(this);
-		console.log($this.attr('value'));
-		console.log(turn);
 		if (parseInt($this.attr('value')) === turn) {
 			playSound('sounds/pop-sound.mp3');
 			$this.stop();
@@ -92,6 +90,11 @@ $(function () {
     $('.bubble').each(function() {
         animateDiv($(this));
     });
+
+    var $restart = $('.restart')
+    $restart.click(function (event) {
+		location.reload();
+	});
 
     function shuffleArray(array) {
 	    for (var i = array.length - 1; i > 0; i--) {

@@ -246,3 +246,19 @@ body{
     top: 450px;
     left: 415px;
 }
+
+.restart {
+	position: absolute;
+    color: #134470;
+    text-shadow: 2px 2px 4px #ffffff;
+    top: 500px;
+    left: 410px;
+    height: 80px;
+	width: 80px;
+	background-image: url("../images/bubble.png");
+	border-radius: 100%;
+	background-color: #e3f0fc;
+	background-size: 80px 80px;
+	text-align: center;
+    line-height: 80px;
+}
