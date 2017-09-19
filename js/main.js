@@ -69,7 +69,7 @@ $(function () {
 			playSound('sounds/pop-sound.mp3');
 			$this.stop();
 			$this.remove();
-			// speedModifier += 0.05;
+			speedModifier += 0.04;
 			turn ++;
 			if (checkWin()) {
 				displayWin();
