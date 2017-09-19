@@ -42,12 +42,8 @@ body{
 	width: 80px;
 	background-image: url("../images/bubble.png");
 	background-size: 80px 80px;
-}
-
-#start p {
-	position: absolute;
-    top: 10px;
-    left: 22px;
+	text-align: center;
+    line-height: 80px;
 }
 
 #maingame {
@@ -65,6 +61,7 @@ body{
 	position: relative;
 	text-align: center;
 	color: #e3f0fc;
+	text-shadow: 2px 2px 4px #000000;
 }
 
 #timedisplay {
@@ -83,11 +80,17 @@ body{
 
 #questiondisplay {
 	position: absolute;
-	left: 300px;
+    left: 175px;
+    width: 500px;
+    text-align: center;
 }
 
 #questiondisplay h2 {
 	margin: 5px;
+}
+
+#question {
+	font-size: 20px;
 }
 
 #livesdisplay {
