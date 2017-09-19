@@ -24,19 +24,24 @@ body{
     position: absolute;
     left: 100px;
     text-align: center;
-    color: #b2cfea;
+    color: #b1c5e8;
     text-shadow: 2px 2px 4px #000000;
 }
 
 #instructions h1 {
 	font-size: 70px;
+	margin: 25px;
+}
+
+#instructions p {
+	font-size: 22px;
 }
 
 #start {
     position: absolute;
     color: #134470;
     text-shadow: 2px 2px 4px #ffffff;
-    top: 300px;
+    top: 330px;
     left: 320px;
     height: 80px;
 	width: 80px;
