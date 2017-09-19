@@ -7,7 +7,7 @@ $(function () {
 		['How many violins in a string quartet?','2'],
 		['How many stairs are there in a bungalow?','0'],
 		['What is the highest possible score in Blackjack?','21'],
-		['How many leeters are there in the alphabet?','26'],
+		['How many letters are there in the alphabet?','26'],
 		['How many counties are there in England?','48'],
 		['What is the character limit on twitter?','140'],
 		['How many Pokemon are there in generation 1?','151'],
@@ -40,7 +40,10 @@ $(function () {
 		['What\'s the title of the famous book by George Orwell?','1984'],
 		['Hal 9000 is an antagonist in which film?','2001'],
 		['How many years did Rip Van Winkle sleep for?','20'],
-		['How many wives did Henry VII have?','6']
+		['How many wives did Henry VII have?','6'],
+		['The famous US Highway is called Route what?','66'],
+		['How many pices are in a game of chess?','16'],
+		['How many rounds are in a professional boxing match?','12']
 	];
 	var shuffledQuestions = shuffleArray(allquestions);
 	var speedModifier = 0.1;		//Taken from inside calcspeed
