@@ -34,7 +34,7 @@ body{
 
 #start {
     position: absolute;
-    color: #18568e;
+    color: #134470;
     text-shadow: 2px 2px 4px #ffffff;
     top: 300px;
     left: 320px;
@@ -144,6 +144,10 @@ body{
 	background-size: 80px 80px;
 	background-color: #e3f0fc;
 	z-index: 1;
+	color: #134470;
+    text-shadow: 2px 2px 4px #ffffff;
+    text-align: center;
+    line-height: 80px;
 }
 
 #win {
