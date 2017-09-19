@@ -16,7 +16,31 @@ $(function () {
 		['How many millilitres in a pint?','568'],
 		['How many Dalmations were in Disney\'s famous film?','101'],
 		['What is the value of the imaginary number i, squared?','-1'],
-		['What is absoulte zero in celcius?','-273']
+		['What is absoulte zero in celcius?','-273'],
+		['How many miles would the Proclaimers walk?','500'],
+		['What\'s the loneliest number?','1'],
+		['How many arms and tentacles does a squid have?','10'],
+		['How many players are there in a standard football team?','11'],
+		['How many years is a diamond anniversary'],
+		['How many colours are there in the rainbow?','7'],
+		['How many cards are there in a standard deck?','52'],
+		['When was the battle of Hastings?','1066'],
+		['How many minutes are there in a day?','1440'],
+		['According to Blink-182, no one likes you when you\'re?','23'],
+		['A googol is 1 followed how many zeros?','100'],
+		['How many lives does a cat have?','9'],
+		['How many yards are there in a mile?','1760'],
+		['How many times has London hosted the modern Olympic Games?','3'],
+		['How many bones are there in an adult human body?','206'],
+		['What\'s the answer to the ultimate question?','42'],
+		['How many sonnets did Shakespeare write?','154'],
+		['How many carats is pure gold?','24'],
+		['Phileas Fogg travelled around the world in how many days?','80'],
+		['How many Spartans fought the Persian army?','300'],
+		['What\'s the title of the famous book by George Orwell?','1984'],
+		['Hal 9000 is an antagonist in which film?','2001'],
+		['How many years did Rip Van Winkle sleep for?','20'],
+		['How many wives did Henry VII have?','6']
 	];
 	var shuffledQuestions = shuffleArray(allquestions);
 	var $bubble = $('.bubble');
