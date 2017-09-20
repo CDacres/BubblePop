@@ -255,13 +255,13 @@ $(function () {
 	function addfish (fishSeen) {
 		if (fishSeen === false) {
 			if (turn <= 3 ) {
-				var randomNum = Math.floor(Math.random() * 4);
+				var randomNum = Math.floor(Math.random() * 3);
 				if (randomNum === 0) {
 					$('#starfish').show();
 					fishSeen === true;
 				}
 			} else if (turn <= 6) {
-				var randomNum = Math.floor(Math.random() * 6);
+				var randomNum = Math.floor(Math.random() * 5);
 				if (randomNum === 0) {
 					$('#starfish').show();
 					fishSeen === true;
