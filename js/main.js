@@ -21,14 +21,14 @@ $(function () {
 		['What\'s the loneliest number?','1'],
 		['How many arms and tentacles does a squid have?','10'],
 		['How many players are there in a standard football team?','11'],
-		['How many years is a diamond anniversary','60'],
+		['How many years is a diamond anniversary?','60'],
 		['How many colours are there in the rainbow?','7'],
 		['How many cards are there in a standard deck?','52'],
 		['When was the battle of Hastings?','1066'],
 		['How many minutes are there in a day?','1440'],
 		['According to Blink-182, no one likes you when you\'re?','23'],
 		['A googol is 1 followed how many zeros?','100'],
-		['How many lives does a cat have?','9'],
+		['How many lives does a cat supposedly have?','9'],
 		['How many yards are there in a mile?','1760'],
 		['How many times has London hosted the modern Olympic Games?','3'],
 		['How many bones are there in an adult human body?','206'],
@@ -40,15 +40,19 @@ $(function () {
 		['What\'s the title of the famous book by George Orwell?','1984'],
 		['Hal 9000 is an antagonist in which film?','2001'],
 		['How many years did Rip Van Winkle sleep for?','20'],
-		['How many wives did Henry VII have?','6'],
+		['How many wives did Henry VIII have?','6'],
 		['The famous US Highway is called Route what?','66'],
-		['How many pices are in a game of chess?','16'],
-		['How many rounds are in a professional boxing match?','12']
+		['How many pieces are in a game of chess?','32'],
+		['How many rounds are in a professional boxing match?','12'],
+		['How many planets are there in the solar system?','8'],
+		['How many keys are there on a full-sized piano?','88'],
+		['How many kilograms are there in a tonne?','1000']
 	];
 	var shuffledQuestions = shuffleArray(allquestions);
 	var speedModifier = 0.1;		//Taken from inside calcspeed
 	var turn = 1;
 	var lives = 3;
+	var starfishSeen = false;
 	var qa = shuffledQuestions.slice(0,10);
 	var extraQ = shuffledQuestions.slice(10,15);
 	answerSetup();
@@ -90,7 +94,20 @@ $(function () {
 		}
 	});
 
+	var $starfish = $('#starfish');
+	$starfish.click(function (event) {
+		$currentBubble = $('#bubble' + turn);
+		$currentBubble.css('background-color', '#00ffa1');
+		setTimeout(function () {
+            $currentBubble.css('background-color', '#e3f0fc');
+        }, 500);
+	});
+
     $('.bubble').each(function() {
+        animateDiv($(this));
+    });
+
+    $('.fish').each(function() {
         animateDiv($(this));
     });
 

@@ -177,6 +177,20 @@ body{
 	display: none;
 }
 
+.fish {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	z-index: 1;
+	color: #134470;
+}
+
+#starfish {
+	background-image: url("../images/starfish.png");
+	background-size: 80px 80px;
+/*	display: none;*/
+}
+
 #win {
 	height: 700px;
 	width: 900px;
