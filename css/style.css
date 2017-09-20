@@ -188,7 +188,7 @@ body{
 #starfish {
 	background-image: url("../images/starfish.png");
 	background-size: 80px 80px;
-/*	display: none;*/
+	display: none;
 }
 
 #win {

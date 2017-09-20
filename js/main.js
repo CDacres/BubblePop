@@ -80,6 +80,7 @@ $(function () {
 				displayWin();
 			} else {
 				$('#question').html(qa[turn-1][0]);
+				addStarfish ();
 			}
 		} else {
 			playSound('sounds/error.mp3');
@@ -96,11 +97,13 @@ $(function () {
 
 	var $starfish = $('#starfish');
 	$starfish.click(function (event) {
+		var $this = $(this);
 		$currentBubble = $('#bubble' + turn);
 		$currentBubble.css('background-color', '#00ffa1');
 		setTimeout(function () {
             $currentBubble.css('background-color', '#e3f0fc');
         }, 500);
+		$this.hide();
 	});
 
     $('.bubble').each(function() {
@@ -246,6 +249,16 @@ $(function () {
 				$('#bubble14').show();
 				qa = qa.concat(extraQ.slice(2,4));
 		}
+	}
+
+	function addStarfish () {
+		if (starfishSeen === false) {
+			var randomNum = Math.floor(Math.random() * 5);
+			if (randomNum === 0) {
+				$('#starfish').show();
+				starfishSeen === true;
+			}
+		} 
 	}
 
 });
