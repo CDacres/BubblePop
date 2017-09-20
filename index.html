@@ -12,43 +12,40 @@
 <body>
 
 	<div id="frame">
-		<div id="menu">
-			<div id="instructions">
-				<h1>Bubble Pop!</h1>
-				<p>
-					How to play:<br><br>
-					Click on the bubble with the correct answer to the question on screen to pop it!<br>
-					Click on the wrong bubble and you'll lose a life and create more bubbles.<br>
-					Pop all the bubbles to win.<br>
-					Lose all 3 lives and it's game over.<br>
-					Sometimes sea creatures will appear to help you:<br>
-					•Click on a a starfish to show the correct answer for a question.<br>
-				</p>
-				<div id="start">Start</div>
+		<div id="particles-js"></div>
+			<div id="menu">
+				<div id="instructions">
+					<h1>Bubble Pop!</h1>
+					<p>
+						How to play:<br><br>
+						Click on the bubble with the correct answer to the question on screen to pop it!<br>
+						Click on the wrong bubble and you'll lose a life and create more bubbles.<br>
+						Pop all the bubbles to win.<br>
+						Lose all 3 lives and it's game over.<br>
+						Sometimes a starfish will appear to help you. Click it to show the correct answer for a question. It'll only appear once though so be careful when to use it!<br>
+					</p>
+					<div id="start">Start</div>
+				</div>
 			</div>
-		</div>
-		<div id="maingame">
-			<div id="particles-js">
-			<div id="toolbar">
-				<div id="timedisplay">
-					<h2>Time</h2>
-					<div id="time">
-						<span id="min">00</span>:<span id="sec">00</span>
+			<div id="maingame">
+				<div id="toolbar">
+					<div id="timedisplay">
+						<h2>Time</h2>
+						<div id="time">
+							<span id="min">00</span>:<span id="sec">00</span>
+						</div>
+					</div>
+					<div id="questiondisplay">
+						<h2>Question:</h2>
+						<div id="question"></div>
+					</div>
+					<div id="livesdisplay">
+						<h2>Lives</h2>
+						<div id="life1" class="lives"></div>
+						<div id="life2" class="lives"></div>
+						<div id="life3" class="lives"></div>
 					</div>
 				</div>
-				<div id="questiondisplay">
-					<h2>Question:</h2>
-					<div id="question"></div>
-				</div>
-				<div id="livesdisplay">
-					<h2>Lives</h2>
-					<div id="life1" class="lives"></div>
-					<div id="life2" class="lives"></div>
-					<div id="life3" class="lives"></div>
-				</div>
-			</div>
-		
-
 				<div id="container">
 					<div id="bubble1" class="bubble" value="1"></div>
 					<div id="bubble2" class="bubble" value="2"></div>
@@ -67,24 +64,24 @@
 					<div id="starfish" class="fish"></div>
 				</div>
 			</div>
-		</div>
-		<div id="win">
-			<h1>You Win!</h1>
-			<h2>Your time</h2>
-			<div id="wintime">
-				<span id="winmin">00</span>:<span id="winsec">00</span>
+			<div id="win">
+				<h1>You Win!</h1>
+				<h2>Your time</h2>
+				<div id="wintime">
+					<span id="winmin">00</span>:<span id="winsec">00</span>
+				</div>
+				<div class="restart">Play Again</div>
 			</div>
-			<div class="restart">Play Again</div>
-		</div>
-		<div id="lose">
-			<h1>Game Over</h1>
-			<h2>Your time</h2>
-			<div id="losetime">
-				<span id="losemin">00</span>:<span id="losesec">00</span>
+			<div id="lose">
+				<h1>Game Over</h1>
+				<h2>Your time</h2>
+				<div id="losetime">
+					<span id="losemin">00</span>:<span id="losesec">00</span>
+				</div>
+				<div class="restart">Play Again</div>
 			</div>
-			<div class="restart">Play Again</div>
-		</div>
-	</div>
+<!-- 		</div> -->
+	</div>	
 	<audio autoplay loop>
 		<source src="sounds/underwater-ambience.mp3" type="audio/mpeg">
 	</audio>

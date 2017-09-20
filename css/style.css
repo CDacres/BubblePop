@@ -7,16 +7,12 @@ body {
 	margin: 0 auto;
 	height: 700px;
 	width: 900px;
+	position: relative;
 }
 
 #menu {
 	height: 700px;
 	width: 900px;
-	background-image: url("../images/bubble-menu.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
-	display: none;
 }
 
 #instructions {
@@ -28,20 +24,16 @@ body {
     text-shadow: 2px 2px 4px #000000;
 }
 
-#particles-js{
-	background-color: #0ba6cc;
-}
-
 #instructions h1 {
 	font-size: 85px;
 	margin: 15px;
-	color: #87c7e8
+	color: #00fbff;
 }
 
 #instructions p {
     font-size: 21px;
     text-align: left;
-	color: #97d9fb;
+	color: #00d5f1;;
 }
 
 #start {
@@ -63,10 +55,22 @@ body {
 #maingame {
 	height: 700px;
 	width: 900px;
-/*	display:none;*/
-/*	background-image: url("../images/bubble-background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;*/
+	position: relative;
+	display:none;
+}
+
+#particles-js {
+	background-color: #0ba1f1;
+	height: 700px;
+    width: 900px;
+    position: absolute;
+}
+
+#particles-js canvas {
+	width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0px;
 }
 
 #toolbar {
@@ -200,11 +204,8 @@ body {
 #win {
 	height: 700px;
 	width: 900px;
-	background-image: url("../images/bubble-win.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	position: relative;
-	color: #9cabff;
+	color: #00d5f1;
     text-shadow: 2px 2px 4px #000000;
 	display: none;
 }
@@ -235,9 +236,6 @@ body {
 #lose {
 	height: 700px;
 	width: 900px;
-	background-image: url("../images/bubble-lose.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 	position: relative;
 	color: #00d5f1;
     text-shadow: 2px 2px 4px #000000;
