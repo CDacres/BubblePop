@@ -29,12 +29,13 @@ body{
 
 #instructions h1 {
 	font-size: 85px;
-	margin: 40px;
+	margin: 15px;
 	color: #87c7e8
 }
 
 #instructions p {
-	font-size: 22px;
+    font-size: 21px;
+    text-align: left;
 	color: #97d9fb;
 }
 
