@@ -6,6 +6,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 	<link rel="shortcut icon" href="images/bubble.ico" type="image/x-icon">
 	<link rel="icon" href="images/bubble.ico" type="image/x-icon">
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.0.2/particles.js"></script> -->
+
 </head>
 <body>
 
@@ -26,6 +28,7 @@
 			</div>
 		</div>
 		<div id="maingame">
+			<div id="particles-js">
 			<div id="toolbar">
 				<div id="timedisplay">
 					<h2>Time</h2>
@@ -44,22 +47,25 @@
 					<div id="life3" class="lives"></div>
 				</div>
 			</div>
-			<div id="container">
-				<div id="bubble1" class="bubble" value="1"></div>
-				<div id="bubble2" class="bubble" value="2"></div>
-				<div id="bubble3" class="bubble" value="3"></div>
-				<div id="bubble4" class="bubble" value="4"></div>
-				<div id="bubble5" class="bubble" value="5"></div>
-				<div id="bubble6" class="bubble" value="6"></div>
-				<div id="bubble7" class="bubble" value="7"></div>
-				<div id="bubble8" class="bubble" value="8"></div>
-				<div id="bubble9" class="bubble" value="9"></div>
-				<div id="bubble10" class="bubble" value="10"></div>
-				<div id="bubble11" class="bubble" value="11"></div>
-				<div id="bubble12" class="bubble" value="12"></div>
-				<div id="bubble13" class="bubble" value="13"></div>
-				<div id="bubble14" class="bubble" value="14"></div>
-				<div id="starfish" class="fish"></div>
+		
+
+				<div id="container">
+					<div id="bubble1" class="bubble" value="1"></div>
+					<div id="bubble2" class="bubble" value="2"></div>
+					<div id="bubble3" class="bubble" value="3"></div>
+					<div id="bubble4" class="bubble" value="4"></div>
+					<div id="bubble5" class="bubble" value="5"></div>
+					<div id="bubble6" class="bubble" value="6"></div>
+					<div id="bubble7" class="bubble" value="7"></div>
+					<div id="bubble8" class="bubble" value="8"></div>
+					<div id="bubble9" class="bubble" value="9"></div>
+					<div id="bubble10" class="bubble" value="10"></div>
+					<div id="bubble11" class="bubble" value="11"></div>
+					<div id="bubble12" class="bubble" value="12"></div>
+					<div id="bubble13" class="bubble" value="13"></div>
+					<div id="bubble14" class="bubble" value="14"></div>
+					<div id="starfish" class="fish"></div>
+				</div>
 			</div>
 		</div>
 		<div id="win">
@@ -83,6 +89,7 @@
 		<source src="sounds/underwater-ambience.mp3" type="audio/mpeg">
 	</audio>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="bower_components/particles.js/particles.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

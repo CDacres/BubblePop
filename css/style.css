@@ -16,6 +16,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+	display: none;
 }
 
 #instructions {
@@ -25,6 +26,10 @@ body {
     left: 100px;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
+}
+
+#particles-js{
+	background-color: #0ba6cc;
 }
 
 #instructions h1 {
@@ -58,10 +63,10 @@ body {
 #maingame {
 	height: 700px;
 	width: 900px;
-	display:none;
-	background-image: url("../images/bubble-background.jpg");
+/*	display:none;*/
+/*	background-image: url("../images/bubble-background.jpg");
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;*/
 }
 
 #toolbar {
