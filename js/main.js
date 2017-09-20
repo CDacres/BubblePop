@@ -75,7 +75,7 @@ $(function () {
 			$this.stop();
 			$this.remove();
 			speedModifier += 0.04;
-			addfish (starfishSeen);
+			addStarfish();
 			turn ++;
 			if (checkWin()) {
 				displayWin();
@@ -252,27 +252,25 @@ $(function () {
 		}
 	}
 
-	function addfish (fishSeen) {
-		if (fishSeen === false) {
+	function addStarfish () {
+		if (starfishSeen === false) {
 			if (turn <= 3 ) {
 				var randomNum = Math.floor(Math.random() * 3);
 				if (randomNum === 0) {
 					$('#starfish').show();
-					fishSeen === true;
 				}
 			} else if (turn <= 6) {
 				var randomNum = Math.floor(Math.random() * 5);
 				if (randomNum === 0) {
 					$('#starfish').show();
-					fishSeen === true;
 				}
 			} else if (turn <= 9) {
 				var randomNum = Math.floor(Math.random() * 8);
 				if (randomNum === 0) {
 					$('#starfish').show();
-					fishSeen === true;
 				}
 			}
+			starfishSeen = true;
 		} 
 	}
 
