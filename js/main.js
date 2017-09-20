@@ -75,12 +75,12 @@ $(function () {
 			$this.stop();
 			$this.remove();
 			speedModifier += 0.04;
+			addfish (starfishSeen);
 			turn ++;
 			if (checkWin()) {
 				displayWin();
 			} else {
 				$('#question').html(qa[turn-1][0]);
-				addStarfish ();
 			}
 		} else {
 			playSound('sounds/error.mp3');
@@ -98,11 +98,12 @@ $(function () {
 	var $starfish = $('#starfish');
 	$starfish.click(function (event) {
 		var $this = $(this);
+		playSound('sounds/waterblub.mp3');
 		$currentBubble = $('#bubble' + turn);
 		$currentBubble.css('background-color', '#00ffa1');
 		setTimeout(function () {
             $currentBubble.css('background-color', '#e3f0fc');
-        }, 500);
+        }, 750);
 		$this.hide();
 	});
 
@@ -251,12 +252,26 @@ $(function () {
 		}
 	}
 
-	function addStarfish () {
-		if (starfishSeen === false) {
-			var randomNum = Math.floor(Math.random() * 5);
-			if (randomNum === 0) {
-				$('#starfish').show();
-				starfishSeen === true;
+	function addfish (fishSeen) {
+		if (fishSeen === false) {
+			if (turn <= 3 ) {
+				var randomNum = Math.floor(Math.random() * 4);
+				if (randomNum === 0) {
+					$('#starfish').show();
+					fishSeen === true;
+				}
+			} else if (turn <= 6) {
+				var randomNum = Math.floor(Math.random() * 6);
+				if (randomNum === 0) {
+					$('#starfish').show();
+					fishSeen === true;
+				}
+			} else if (turn <= 9) {
+				var randomNum = Math.floor(Math.random() * 8);
+				if (randomNum === 0) {
+					$('#starfish').show();
+					fishSeen === true;
+				}
 			}
 		} 
 	}
