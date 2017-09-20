@@ -1,5 +1,6 @@
 $(function () {
 
+	//Array storing all possible questions
 	var allquestions = [
 		['How many in a baker\'s dozen?','13'],
 		['What is the legal drinking age in the UK','18'],
@@ -48,8 +49,10 @@ $(function () {
 		['How many keys are there on a full-sized piano?','88'],
 		['How many kilograms are there in a tonne?','1000']
 	];
+
+	//Creates randomly shuffled array of all questions.
 	var shuffledQuestions = shuffleArray(allquestions);
-	var speedModifier = 0.1;		//Taken from inside calcspeed
+	var speedModifier = 0.1;
 	var turn = 1;
 	var lives = 3;
 	var starfishSeen = false;
@@ -70,16 +73,20 @@ $(function () {
 	var $bubble = $('.bubble');
 	$bubble.click(function (event) {
 		var $this = $(this);
+		//If value of bubble is equal to value of turn...
 		if (parseInt($this.attr('value')) === turn) {
 			playSound('sounds/pop-sound.mp3');
+			//Stops animation on bubble before removing it.
 			$this.stop();
 			$this.remove();
+			//Increases speed modifier, speeding up remaining bubbles.
 			speedModifier += 0.04;
 			addStarfish();
 			turn ++;
 			if (checkWin()) {
 				displayWin();
 			} else {
+				//Changes question displayed to next question in array.
 				$('#question').html(qa[turn-1][0]);
 			}
 		} else {
@@ -95,6 +102,7 @@ $(function () {
 		}
 	});
 
+	// When starfish clicked, turns bubble with current answer green for .75 seconds and hides starfish.
 	var $starfish = $('#starfish');
 	$starfish.click(function (event) {
 		var $this = $(this);
@@ -120,6 +128,7 @@ $(function () {
 		location.reload();
 	});
 
+    //Shuffles array using Durstenfeld shuffle algorithm method of Fisher-Yates shuffle. Picks one random element for each original array element, and then excludes it from the next draw. 
     function shuffleArray(array) {
 	    for (var i = array.length - 1; i > 0; i--) {
 	        var j = Math.floor(Math.random() * (i + 1));
@@ -130,6 +139,7 @@ $(function () {
     	return array;
 	}
 	
+	// Generates new random position for bubbles, (which will keep them within confines of container).
 	function makeNewPosition($container) {
 	    $container = ($container || $(window))
 	    var h = $container.height() - 80;
@@ -139,6 +149,16 @@ $(function () {
 	    return [nh, nw];
 	}
 
+	//Calculates how quickly bubbles will move to next position.
+	function calcSpeed(prev, next) {
+	    var x = Math.abs(prev[1] - next[1]);
+	    var y = Math.abs(prev[0] - next[0]);
+	    var greatest = x > y ? x : y;
+	    var speed = Math.ceil(greatest / speedModifier);
+	    return speed;
+	}
+
+	// Animation function, combining new random location with speed of movement. Recursive function so animation doesn't stop.
 	function animateDiv($target) {
 	    var newq = makeNewPosition($target.parent());
 	    var oldq = $target.offset();
@@ -151,16 +171,11 @@ $(function () {
 	    });
 	}
 
-	function calcSpeed(prev, next) {
-	    var x = Math.abs(prev[1] - next[1]);
-	    var y = Math.abs(prev[0] - next[0]);
-	    var greatest = x > y ? x : y;
-	    var speed = Math.ceil(greatest / speedModifier);
-	    return speed;
-	}
-
+	// Clock variable
 	var Clock = {
 	totalSeconds: 0,
+
+		//Start function (specific to clock), which outputs time from start to timer display.
 		start: function () {
 			var self = this;
 			function pad(val) { return val > 9 ? val : "0" + val; }
@@ -170,30 +185,36 @@ $(function () {
 		    $('#sec').html(pad(parseInt(self.totalSeconds % 60)));
 	    	}, 1000);
 	  	},
+
+	  	// Stop function within clock variable.
 	    stop: function () {
     		clearInterval(this.interval);
     		delete this.interval;
   		}
 	};
 
+	//Assigns answers stored in qa array to html of bubbles.
 	function answerSetup () {
 		for (var i = 1; i <= qa.length; i++) {
 			$('#bubble' + i).html(qa[i-1][1]);
 		}
 	}
 
+	//Assigns answers stored in extraQ array to html of hidden extra bubbles.
 	function extraAnswerSetup () {
 		for (var i = 1; i <= extraQ.length; i++) {
 			$('#bubble' + (10+i)).html(extraQ[i-1][1]);
 		}
 	}
 
+	//Checks to see if turns (which is increased before calling), has exceeded number of questions & answers.
 	function checkWin () {
 		if (turn > qa.length) {
 			return true;
 		}
 	}
 
+	//Hides main game and shows win screen, showing final time.
 	function displayWin () {
 		Clock.stop();
 		getFinalTime('win');
@@ -202,6 +223,7 @@ $(function () {
 		$('#win').show();
 	}
 
+	//If lives reach zero, hides main game and shows lose screen, showing final time.
 	function checkLose () {
 		if (lives === 0) {
 			Clock.stop();
@@ -211,12 +233,15 @@ $(function () {
 		}
 	}
 
+
+	//Play sound function for calling & playing short audio.
 	function playSound(path) {
 		var sound = document.createElement('audio');
 		sound.setAttribute('src', path);
 		sound.play();
 	}
 
+	// If number of lives drops, display hides one of the life icons.
 	function checkLives () {
 		switch(lives) {
 			case 3:
@@ -233,11 +258,13 @@ $(function () {
 		}
 	}
 
+	//Gets time at win/lose and outputs to win/lose screen.
 	function getFinalTime(winLose) {
 		$('#' + winLose + 'min').html($('#min').html());
 		$('#' + winLose + 'sec').html($('#sec').html());
 	}
 
+	//If wrong bubble is clicked (which reduces lives), shows extra question bubbles, and adds extra questions to main question array.
 	function addBubbles() {
 		switch(lives) {
 			case 2:
@@ -252,6 +279,7 @@ $(function () {
 		}
 	}
 
+	//If starfish hasn't already appeared, run function to make it possibly show. Proability of appearing based on turn #.
 	function addStarfish () {
 		if (starfishSeen === false) {
 			if (turn <= 3 ) {
@@ -266,6 +294,11 @@ $(function () {
 				}
 			} else if (turn <= 9) {
 				var randomNum = Math.floor(Math.random() * 8);
+				if (randomNum === 0) {
+					$('#starfish').show();
+				}
+			} else {
+				var randomNum = Math.floor(Math.random() * 10);
 				if (randomNum === 0) {
 					$('#starfish').show();
 				}
