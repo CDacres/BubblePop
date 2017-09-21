@@ -51,7 +51,9 @@ $(function () {
 		['How many rounds are in a professional boxing match?','12'],
 		['How many planets are there in the solar system?','8'],
 		['How many keys are there on a full-sized piano?','88'],
-		['How many kilograms are there in a tonne?','1000']
+		['How many kilograms are there in a tonne?','1000'],
+		['In what year was the world wide wide invented?','1989'],
+		['How many elements are there in the periodic table?','118']
 	];
 
 	//Creates randomly shuffled array of all questions.
