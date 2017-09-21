@@ -111,7 +111,6 @@ $(function () {
 	$starfish.click(function (event) {
 		var $this = $(this);
 		playBlub();
-		play
 		$currentBubble = $('#bubble' + turn);
 		$currentBubble.css('background-color', '#00ffa1');
 		setTimeout(function () {
