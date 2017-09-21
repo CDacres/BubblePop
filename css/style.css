@@ -4,7 +4,7 @@ body {
 }
 
 #frame {
-	margin: 0 auto;
+	left: 250px;
 	height: 700px;
 	width: 900px;
 	position: relative;

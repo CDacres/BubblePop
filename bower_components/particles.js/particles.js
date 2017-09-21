@@ -1084,7 +1084,7 @@ var pJS = function(tag_id, params){
               pos_y = e.offsetY || e.clientY;
         }
 
-        pJS.interactivity.mouse.pos_x = pos_x;
+        pJS.interactivity.mouse.pos_x = pos_x -250;
         pJS.interactivity.mouse.pos_y = pos_y;
 
         if(pJS.tmp.retina){
