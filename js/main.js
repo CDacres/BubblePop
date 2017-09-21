@@ -68,7 +68,7 @@ $(function () {
 	$('#lives').html(lives);
 
 	$('#start').click(function (event) {
-		playSound('sounds/bubbles-start.mp3');
+		playStart();
 		$('#menu').hide();
 		$('#maingame').show();
 		Clock.start();
@@ -79,7 +79,7 @@ $(function () {
 		var $this = $(this);
 		//If value of bubble is equal to value of turn...
 		if (parseInt($this.attr('value')) === turn) {
-			playSound('sounds/pop-sound.mp3');
+			playPop();
 			//Stops animation on bubble before removing it.
 			$this.stop();
 			$this.remove();
@@ -94,7 +94,7 @@ $(function () {
 				$('#question').html(qa[turn-1][0]);
 			}
 		} else {
-			playSound('sounds/error.mp3');
+			playWrong();
 			$this.css('background-color', '#ff5900');
 			setTimeout(function () {
                 $this.css('background-color', '#e3f0fc');
@@ -110,7 +110,8 @@ $(function () {
 	var $starfish = $('#starfish');
 	$starfish.click(function (event) {
 		var $this = $(this);
-		playSound('sounds/waterblub.mp3');
+		playBlub();
+		play
 		$currentBubble = $('#bubble' + turn);
 		$currentBubble.css('background-color', '#00ffa1');
 		setTimeout(function () {
@@ -222,7 +223,7 @@ $(function () {
 	function displayWin () {
 		Clock.stop();
 		getFinalTime('win');
-		playSound('sounds/success.mp3');
+		playWin();
 		$('#maingame').hide();
 		$('#win').show();
 	}
@@ -238,10 +239,35 @@ $(function () {
 	}
 
 
-	//Play sound function for calling & playing short audio.
-	function playSound(path) {
+	//Play sound function for calling & playing short audio. Individual functions for each sound to reduce load time
+
+	function playStart() {
 		var sound = document.createElement('audio');
-		sound.setAttribute('src', path);
+		sound.setAttribute('src', 'sounds/bubbles-start.mp3');
+		sound.play();
+	}
+
+	function playPop() {
+		var sound = document.createElement('audio');
+		sound.setAttribute('src', 'sounds/pop-sound.mp3');
+		sound.play();
+	}
+
+	function playBlub() {
+		var sound = document.createElement('audio');
+		sound.setAttribute('src', 'sounds/waterblub.mp3');
+		sound.play();
+	}
+
+	function playWrong() {
+		var sound = document.createElement('audio');
+		sound.setAttribute('src', 'sounds/error.mp3');
+		sound.play();
+	}
+
+	function playWin() {
+		var sound = document.createElement('audio');
+		sound.setAttribute('src', 'sounds/success.mp3');
 		sound.play();
 	}
 
