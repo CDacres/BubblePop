@@ -13,6 +13,8 @@ In order to run the game, the following steps must first be taken:
 5. In the terminal type: **python -m SimpleHTTPServer 8000**
 6. Go to **localhost:8000** in your browser.
 
+Alternatively, the game can also be found at the following link: [https://cdacres.github.io/BubblePop/] (https://cdacres.github.io/BubblePop/)
+
 ###Instructions
 
 How to play:
